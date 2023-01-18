@@ -12,7 +12,7 @@ const App = () => {
   const getAll = () => {
     console.log(`get top 25 repos`);
     $.ajax({
-      url: 'http://127.0.0.1:1128/repos',
+      url: '/repos',
       type: 'GET',
       contentType: 'application/json',
       success: data => setRepos([...data]),
@@ -23,7 +23,7 @@ const App = () => {
   const search = (term, callback) => {
     console.log(`${term} was searched`);
     $.ajax({
-      url: 'http://127.0.0.1:1128/repos',
+      url: '/repos',
       type: 'POST',
       data: JSON.stringify({username: term}),
       contentType: 'application/json',
