@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/fetcher', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://quanjingchen:test123@cluster0.xabzeyy.mongodb.net/fetcher', { useNewUrlParser: true, useUnifiedTopology: true });
 
 let repoSchema = new mongoose.Schema({
   id: { type: Number, unique: true, dropDups: true },
