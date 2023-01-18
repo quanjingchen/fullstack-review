@@ -8,8 +8,16 @@ const Search = ({ onSearch }) => {
     setTerm(e.target.value);
   }
 
-  const search = () => {
-    onSearch(term);
+
+  const search = (e) => {
+    e.preventDefault();
+    onSearch(term, (err) => {
+      if (err) {
+        console.log('ERROR WITH POSTING DATA: ', err);
+      } else {
+        console.log('SUCCESSFULLY POSTING DATA')
+      }
+    });
   }
 
   return (
